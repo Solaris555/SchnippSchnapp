@@ -3,7 +3,8 @@ from pygame.locals import *
 
 
 cardList = []
-
+vari = []
+variablen = []
 def getCards():
     
     for farbe in ['herz_', 'karo_', 'pik_', 'kreuz_']:
@@ -12,7 +13,19 @@ def getCards():
             
 
 
+def loadCards():
+    
+    getCards()
+    i = 0
+    for i in range(len(cardList)):
+        vari.append('cards\\' + cardList[i][0] + cardList[i][1] + '.gif')
+        i += 1
 
-getCards()
-
-print(cardList[0][0] + cardList[0][1])
+def makeVar(j):
+    
+    loadCards()
+    for j in range(len(vari)):
+        variablen[j] = vari[j]
+        return j
+                    
+print (variablen)

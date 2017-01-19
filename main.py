@@ -25,7 +25,7 @@ slotx1 = 220
 slotx2 = 480
 buttonList = []
 cardList = []
-
+card = []
 
 def main():
     global FPSCLOCK, DISPLAYSURF
@@ -45,9 +45,9 @@ def main():
     FPSCLOCK = pygame.time.Clock()
 
     background_image = pygame.image.load("background.jpg").convert()
-    getCards()
-    #cardimage =
-    card1 = pygame.image.load('cards\\' + cardList[3][3] + cardList[3][1] + '.gif').convert()
+    loadCards()
+    
+    
     # -------- Main Program Loop -----------
 
     while not done:
@@ -95,9 +95,14 @@ def getCards():
         for wert in ['02', '03', '04', '05', '06', '07', '08', '09', '10', 'bube', 'dame', 'koenig', 'ass']:
             cardList.append ( (farbe, wert) )
 
-#def getCardImage():
- #   'cards\\' + cardList[card_wert][0] + cardList[card_color][1] + '.gif'
-    
+def loadCards():
+
+    getCards()
+    i = 0
+    for i in range(len(cardList)):
+        j = i + 1
+        card[j] = pygame.image.load('cards\\' + cardList[i][0] + cardList[i][1] + '.gif').convert()
+        i += 1
 
 
 # Close the window and quit.
