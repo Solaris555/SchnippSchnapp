@@ -17,15 +17,18 @@ def loadCards():
     
     getCards()
     i = 0
+
     for i in range(len(cardList)):
-        vari.append('cards\\' + cardList[i][0] + cardList[i][1] + '.gif')
+        vari.append(cardList[i][0] + cardList[i][1])
         i += 1
 
 def makeVar(j):
     
     loadCards()
-    for j in range(len(vari)):
-        variablen[j] = vari[j]
-        return j
-                    
-print (variablen)
+
+#def shuffleCards():
+    
+loadCards()
+herz_2 = vari[0]
+#print(len(vari))
+print (herz_2)
